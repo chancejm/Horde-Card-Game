@@ -1,0 +1,23 @@
+div{
+    border: 1px dotted green;
+    text-align: center;
+    height: 100%;
+}
+#time{
+    
+}
+#question{
+    visibility: hidden;
+}
+#aOne{
+    visibility: hidden;
+}
+#aTwo{
+    visibility: hidden;
+}
+#aThree{
+    visibility: hidden;
+}
+#aFour{
+    visibility: hidden;
+}
