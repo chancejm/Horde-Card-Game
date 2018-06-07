@@ -1,37 +1,139 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" >
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    <title>Trivia Game</title>
+    <title>Hello, world!</title>
   </head>
-<div class="container">
-    <body>
-        <div class="row">
-            <div id="left" class="col-lg-2">
-                LEFT
+    <div class="container" style="background-image: url(assets/images/skullpic.jpg);">
+        <body>
+            
+            <div id="main" class="row">
+                <div  class="col-sm-1">
+                        <div id='pickTimeBtn'>
+                                Pick<br>Ready
+                            </div>
+                </div>
+                
+                <div class="col-lg-10">
+                        <div id="start" style="border-bottom: 2px solid grey; color: white;"><p style="font-size: 4vw; text-align: center;">START</p></div>
+                        <div class="space" style="height: 11.1%;"></div>
+                        <div id="firstRow" class="lane" class="rowOne" class="row">
+                                <div id="nextOne" class="unit">
+                                    <div id="waitingOne" class ="oneWInfo info"> Zombie 1/1</div>
+                                </div>
+                                <div id="nextTwo" class="unit">
+                                    <div class ="twoWInfo info"> Zombie 1/1</div>
+                                </div>
+                                <div id="nextThree" class="unit">
+                                    <div class ="threeWInfo info"> Zombie 1/1</div>
+                                </div>
+                                <div id="nextFour" class="unit">
+                                    <div class ="fourWInfo info"> Zombie 1/1</div>
+                                </div>
+                                <div id="nextFive" class="unit">
+                                    <div class ="fiveWInfo info"> Zombie 1/1</div>
+                                </div>
+                                <div id="nextSix" class="unit">
+                                    <div class ="sixWInfo info"> Zombie 1/1</div>
+                                </div>
+                                <div id="nextSeven" class="unit">
+                                    <div class ="sevenWInfo info"> Zombie 1/1</div>
+                                </div>
+                        </div>
+                        <div id="secondRow" class="lane" class="rowTwo" class="row">
+                                <div id="badOne" class="brow unit">
+                                    <div class ="oneEInfo info"> Zombie 1/1</div>
+                                </div>
+                                <div id="badTwo" class="brow unit">
+                                    <div class ="twoEInfo info"> Zombie 1/1</div>
+                                </div>
+                                <div id="badThree" class="brow unit">
+                                    <div class ="threeEInfo info"> Zombie 1/1</div>
+                                </div>
+                                <div id="badFour" class="brow unit">
+                                    <div class ="fourEInfo info"> Zombie 1/1</div>
+                                </div>
+                                <div id="badFive" class="brow unit">
+                                    <div class ="fiveEInfo info"> Zombie 1/1</div>
+                                </div>
+                                <div id="badSix" class="brow unit">
+                                    <div class ="sixEInfo info"> Zombie 1/1</div>
+                                </div>
+                                <div id="badSeven" class="brow unit">
+                                    <div class ="sevenEInfo info"> Zombie 1/1</div>
+                                </div>
+                        </div>
+                        <div id="thirdRow" class="lane" class="rowThree" class="row">
+
+                                <div class="timer" class="unit">
+                                        <div class="timer">
+                                            <div class="timeText">
+                                                
+                                            </div>
+                                        
+                                        </div>
+                                    </div>    
+
+                                <div id="pickedLeft" class="unit">
+                                        <div class ="pickLeftInfo info">0/0</div>
+                                </div>
+                                
+                                <div id="pickedCenter" class="unit">
+                                        <div class ="pickCenterInfo info">0/0</div>
+                                </div>
+                                
+                                <div id="pickedRight" class="unit">
+                                        <div class ="pickRightInfo info">0/0</div>
+                                </div>
+
+                                <div class="timerTwo" class="unit">
+                                    <div class="timerTwo">
+                                        <div class="timeTextTwo">
+                                            
+                                        </div>
+                                        
+                                    </div>
+                                </div>    
+                                
+                        </div>
+                        <div id="fourthRow" class="lane" class="rowFour" class="row">
+                                
+                                <div id="nextKnight" class="unit">
+                                    <div class ="nextKnightInfo info"> Knight: 2/3</div>                                 
+                                </div>
+                                <div id="nextWizard" class="unit">
+                                    <div class ="nextWizardInfo info"> Wizard: 1/1</div>                                   
+                                </div>
+                                <div id="nextRanger" class="unit">
+                                    <div class ="nextRangerInfo info"> Ranger: 3/2</div>                                   
+                                </div>
+                                <div id="nextPaladin" class="unit">
+                                    <div class ="nextPaladinInfo info"> Paladin: 1/4</div>
+                                </div>
+                                <div id="nextAssassin" class="unit">
+                                    <div class ="nextAssassinInfo info"> Assassin: 4/1</div>
+                                </div>
+                                
+                        </div>
+                       
+                        
+                </div>
+                <div class="col-sm-1">
+                        <div id='attackTimeBtn'>
+                                Attack<br>Ready
+                            </div>
+                </div>
             </div>
-            <div id="center" class="col-lg-8">
-                <h1 id="time">CLICK START TO BEGIN</h1>
-                <h3 id="question"></h3>
-                <p id="aOne"></p>
-                <p id="aTwo"></p>
-                <p id="aThree"></p>
-                <p id="aFour"></p>
-            </div>
-            <div id="right" class="col-lg-2">
-                RIGHT
-            </div>
-        </div>
+    
 
     
-    
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
-<script src="assets/javascript/main.js"></script>
-    </body>
-</div>
+            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+            <script src="assets/javascript/main.js"></script>
+        </body>
+    </div>
 </html>

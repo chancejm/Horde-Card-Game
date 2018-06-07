@@ -1,23 +1,253 @@
-div{
-    border: 1px dotted green;
-    text-align: center;
-    height: 100%;
-}
-#time{
+html{
+    background-image: url("../images/cavepic.jpg");
+    background-size: 100% 120%;
     
 }
-#question{
+.hide{
     visibility: hidden;
 }
-#aOne{
+.container{
+    margin-top: 20px;
+    width: 1025px;
+    height: 768px;
+    visibility: visible;
+    opacity: .9;
+    
+}
+body{
+    top: 300px;
+    visibility: hidden;
+    
+}
+
+#pickTimeBtn{
+    position: absolute;
+    text-align: center;
+    color: black;
+    background: darkgreen;
+    visibility: visible;
+    font-size: 20px;
+    border: 2px solid grey;
+    width: 100%;
+    left: 11%;
+}
+#attackTimeBtn{
+    position: absolute;
+    text-align: center;
+    color: black;
+    background: darkred;
+    visibility: visible;
+    font-size: 20px;
+    border: 2px solid grey;
+    width: 100%;
+    right: 10%;
+    
+}
+#main{
+    height: 100%;
+}
+.row{
+    border: 2px solid grey;
+}
+div{
+    /* visibility: visible; */
+    /* border: 1px dotted green; */
+}
+.lane{
+    height: 191px
+    
+}
+.unit{
+    border: 3px solid black;
+    position: absolute;
+    margin-top: 1%;
+    height:21%;
+    width: 13%;
+}
+#firstRow{
+    opacity: .3;
+    border-bottom: 5px solid grey;
+    display: none;
+}
+#secondRow{
+    border-bottom: 5px solid grey;
     visibility: hidden;
 }
-#aTwo{
+#thirdRow{
+    border-top: 5px solid grey;
     visibility: hidden;
 }
-#aThree{
-    visibility: hidden;
+#fourthRow{
+    border-top: 5px solid grey;
 }
-#aFour{
-    visibility: hidden;
+
+#nextOne, #badOne,{
+    left: 1%
 }
+#nextTwo, #badTwo, #nextKnight, #pickedLeft{
+    left: 15.2%;
+}
+#nextThree, #badThree, #nextWizard{
+    left: 29.2%;
+}
+#nextFour, #badFour, #nextRanger, #pickedCenter{
+    left: 43.2%;
+}
+#nextFive, #badFive, #nextPaladin{
+    left: 57.2%;
+}
+#nextSix, #badSix, #nextAssassin, #pickedRight{
+    left: 71.2%;
+}
+#nextSeven, #badSeven, .timerTwo{
+    left: 85.2%;
+}
+/* ROW ONE */
+#nextOne{
+    /* background-image: url("../images/zombiewar.jpg"); */
+    background-size: 100% 100%;
+}
+#nextTwo{
+    /* background-image: url("../images/zombiewar.jpg"); */
+    background-size: 100% 100%;
+}
+#nextThree{
+    /* background-image: url("../images/zombiewar.jpg"); */
+    background-size: 100% 100%;
+}
+#nextFour{
+    /* background-image: url("../images/zombiewar.jpg"); */
+    background-size: 100% 100%;
+}
+#nextFive{
+    /* background-image: url("../images/zombiewar.jpg"); */
+    background-size: 100% 100%;
+}
+#nextSix{
+    /* background-image: url("../images/zombiewar.jpg"); */
+    background-size: 100% 100%;
+}
+#nextSeven{
+    /* background-image: url("../images/zombiewar.jpg"); */
+    background-size: 100% 100%;
+}
+/* ROW ONE */
+
+/* ROW TWO */
+#badOne{
+    background-image: url("../images/zombiewar.jpg");
+    background-size: 100% 100%;
+}
+#badTwo{
+    background-image: url("../images/zombiewar.jpg");
+    background-size: 100% 100%;
+}
+#badThree{
+    background-image: url("../images/zombiewar.jpg");
+    background-size: 100% 100%;
+}
+#badFour{
+    background-image: url("../images/zombiewar.jpg");
+    background-size: 100% 100%;
+}
+#badFive{
+    background-image: url("../images/zombiewar.jpg");
+    background-size: 100% 100%;
+}
+#badSix{
+    background-image: url("../images/zombiewar.jpg");
+    background-size: 100% 100%;
+}
+#badSeven{
+    background-image: url("../images/zombiewar.jpg");
+    background-size: 100% 100%;
+}
+/* ROW TWO */
+
+/* ROW THREE */
+.timer{
+
+}
+#pickedLeft{
+    background-image: url("");
+    background-size: 100% 100%;
+}
+#pickedCenter{
+    background-image: url("");
+    background-size: 100% 100%;
+}
+#pickedRight{
+    background-image: url("");
+    background-size: 100% 100%;
+}
+/* ROW THREE */
+
+/* ROW FOUR */
+#nextKnight{
+    background-image: url("../images/knightpic.jpg");
+    background-size: 100% 100%;
+}
+#nextWizard{
+    background-image: url("../images/wizardpic.jpeg");
+    background-size: 100% 100%;
+}
+#nextRanger{
+    background-image: url("../images/rangerpic.jpg");
+    background-size: 100% 100%;
+}
+#nextPaladin{
+    background-image: url("../images/paladinpic.jpg");
+    background-size: 100% 100%;
+}
+#nextAssassin{
+    background-image: url("../images/assassinpic.jpg");
+    background-size: 100% 100%;
+}
+/* ROW FOUR */
+
+.info{
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 123%;
+    height: 16%;
+    width: 100%;
+    font-size: 11px;
+}
+
+.timer{
+    position: absolute;
+    left: 1%;
+    color: red;
+    font-size: 45px;
+    text-align: center;
+    /* border: 3px solid black; */
+    position: absolute;
+    margin-top: 1%;
+    height:21%;
+    width: 13%;
+}
+.timerTwo{
+    position: absolute;
+    left: 85.2%;
+    color: red;
+    font-size: 45px;
+    text-align: center;
+    /* border: 3px solid black; */
+    position: absolute;
+    margin-top: 1%;
+    height:21%;
+    width: 13%;
+    
+}
+/* .timeText{
+    font-size: 45px;
+    text-align: center;
+}
+
+.timeTextTwo{
+    color: red;
+    font-size: 45px;
+    text-align: center;
+} */
