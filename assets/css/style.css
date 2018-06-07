@@ -19,8 +19,21 @@ body{
     visibility: hidden;
     
 }
-
+#start{
+    border-bottom: 3px solid grey;
+    color: white;
+    height: 12%;
+    width: 100%;
+}
+#spaceText{
+    position: absolute;
+    width: 96%;
+    bottom: 70%;
+    text-align: center;
+    color: white;
+}
 #pickTimeBtn{
+    display: none;
     position: absolute;
     text-align: center;
     color: black;
@@ -30,8 +43,11 @@ body{
     border: 2px solid grey;
     width: 100%;
     left: 11%;
+    top: 60%;
 }
 #attackTimeBtn{
+    display: none;
+    visibility: hidden;
     position: absolute;
     text-align: center;
     color: black;
@@ -41,6 +57,7 @@ body{
     border: 2px solid grey;
     width: 100%;
     right: 10%;
+    top: 60%
     
 }
 #main{
@@ -218,7 +235,7 @@ div{
 
 .timer{
     position: absolute;
-    left: 1%;
+    left: 2%;
     color: red;
     font-size: 45px;
     text-align: center;
@@ -230,7 +247,7 @@ div{
 }
 .timerTwo{
     position: absolute;
-    left: 85.2%;
+    left: 81%;
     color: red;
     font-size: 45px;
     text-align: center;

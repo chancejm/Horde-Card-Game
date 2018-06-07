@@ -1,7 +1,8 @@
 $( document ).ready(function() {
 console.log( "ready!" );
 console.log("test");
-let turnCounter = 2; // -2 for real turn count
+let waveCount = 0;
+let turnCounter = 2;
 let picktimebutton = false;
 let attacktimebutton = false;
 let waveWaiting = false;
@@ -50,6 +51,16 @@ let wizardActive = false;
 let rangerActive = false;
 let paladinActive = false;
 let assassinActive = false;
+//
+
+let newNameOne = "Zombie";
+let newNameTwo = "Zombie";
+let newNameThree = "Zombie";
+let newNameFour = "Zombie";
+let newNameFive = "Zombie";
+let newNameSix = "Zombie";
+let newNameSeven = "Zombie";
+
 
 //
 let oneW = '';
@@ -186,6 +197,13 @@ function loseTime(){
     $("#pickedLeft").css("visibility", "hidden");
     $("#pickedCenter").css("visibility", "hidden");
     $("#pickedRight").css("visibility", "hidden");
+    $('#nextOne').css("visibility", "hidden");
+    $('#nextTwo').css("visibility", "hidden");
+    $('#nextThree').css("visibility", "hidden");
+    $('#nextFour').css("visibility", "hidden");
+    $('#nextFive').css("visibility", "hidden");
+    $('#nextSix').css("visibility", "hidden");
+    $('#nextSeven').css("visibility", "hidden");
     $('#badOne').css("visibility", "hidden");
     $('#badTwo').css("visibility", "hidden");
     $('#badThree').css("visibility", "hidden");
@@ -193,96 +211,135 @@ function loseTime(){
     $('#badFive').css("visibility", "hidden");
     $('#badSix').css("visibility", "hidden");
     $('#badSeven').css("visibility", "hidden");
-
+    $("#pickTimeBtn").css("display", "none");
     $(".timer").css("visibility", "hidden");
+    $("#spaceText").html('YOU CLEARED '+waveCount+' WAVES<br><br>Click Start To Play Again')
     startMenu = true;
 
- mainTimer;
- sec = 60;
- pickPhase = false;
- attackPhase = false;
- mainTimerTwo;
- secA = 30;
- nextKnightPicked = false;
- nextWizardPicked = false;
- nextRangerPicked = false;
- nextPaladinPicked = false;
- nextAssassinPicked = false;
- leftPick = false;
- centerPick = false;
- rightPick = false;
- knightLeft = false;
- knightCenter = false;
- knightRight = false;
- wizardLeft = false;
- wizardCenter = false;
- wizardRight = false;
- rangerLeft = false;
- rangerCenter = false;
- rangerRight = false;
- paladinLeft = false;
- paladinCenter = false;
- paladinRight = false;
- assassinLeft = false;
- assassinCenter =false;
- assassinRight = false;
- knightActive = false;
- wizardActive = false;
- rangerActive = false;
- paladinActive = false;
- assassinActive = false;
- oneW = 0;
- twoW = 0;
- threeW = 0;
- fourW = 0;
- fiveW = 0;
- sixW = 0;
- sevenW = 0;
- oneE = true;
- twoE = true;
- threeE = true;
- fourE = true;
- fiveE = true;
- sixE = true;
- sevenE = true;
- eNameOne = 'Zombie: ';
- eNameTwo = 'Orc: ';
- oneEH = 1;
- twoEH = 1;
- threeEH = 1;
- fourEH = 1;
- fiveEH = 1;
- sixEH = 1;
- sevenEH = 1;
- knightH = 3;
- wizardH = 1;
- rangerH = 2;
- paladinH = 4;
- assassinH = 1;
- oneEA = 1;
- twoEA = 1;
- threeEA = 1;
- fourEA = 1;
- fiveEA = 1;
- sixEA = 1;
- sevenEA = 1;
- knightA = 2;
- wizardA = 1;
- rangerA = 3;
- paladinA = 1;
- assassinA = 4;
- rangerAttackCount = 1;
- knightAttackCount = 1;
- wizardAttackCount = wizardA;
- paladinAttackCount = 1;
- assassinAttackCount = 1;
- knightAttacking = false;
- wizardAttacking = false;
- rangerAttacking = false;
- paladinAttacking = false;
- assassinAttacking = false;
+    turnCounter = 2;
+    picktimebutton = false;
+    attacktimebutton = false;
+    waveWaiting = false;
+    startMenu = true;
+    mainTimer;
+    sec = 35;
+    pickPhase = false;
+    attackPhase = false;
+    mainTimerTwo;
+    secA = 25;
+    nextKnightPicked = false;
+    nextWizardPicked = false;
+    nextRangerPicked = false;
+    nextPaladinPicked = false;
+    nextAssassinPicked = false;
+    leftPick = false;
+    centerPick = false;
+    rightPick = false;
+    knightLeft = false;
+    knightCenter = false;
+    knightRight = false;
+    wizardLeft = false;
+    wizardCenter = false;
+    wizardRight = false;
+    rangerLeft = false;
+    rangerCenter = false;
+    rangerRight = false;
+    paladinLeft = false;
+    paladinCenter = false;
+    paladinRight = false;
+    assassinLeft = false;
+    assassinCenter =false;
+    assassinRight = false;
+    knightActive = false;
+    wizardActive = false;
+    rangerActive = false;
+    paladinActive = false;
+    assassinActive = false;
+    newNameOne = "Zombie";
+    newNameTwo = "Zombie";
+    newNameThree = "Zombie";
+    newNameFour = "Zombie";
+    newNameFive = "Zombie";
+    newNameSix = "Zombie";
+    newNameSeven = "Zombie";
+    oneW = '';
+    twoW = '';
+    threeW = '';
+    fourW = '';
+    fiveW = '';
+    sixW = '';
+    sevenW = '';
+    oneE = true;
+    twoE = true;
+    threeE = true;
+    fourE = true;
+    fiveE = true;
+    sixE = true;
+    sevenE = true;
+    oneEH = 1;
+    twoEH = 1;
+    threeEH = 1;
+    fourEH = 1;
+    fiveEH = 1;
+    sixEH = 1;
+    sevenEH = 1;
+    knightH = 3;
+    wizardH = 1;
+    rangerH = 2;
+    paladinH = 4;
+    assassinH = 1;
+    oneEA = 1;
+    twoEA = 1;
+    threeEA = 1;
+    fourEA = 1;
+    fiveEA = 1;
+    sixEA = 1;
+    sevenEA = 1;
+    knightA = 2;
+    wizardA = 1;
+    rangerA = 3;
+    paladinA = 1;
+    assassinA = 4;
+    oneWA = 1;
+    twoWA = 1;
+    threeWA = 1;
+    fourWA = 1;
+    fiveWA = 1;
+    sixWA = 1;
+    sevenWA = 1;
+    oneWH = 1;
+    twoWH = 1;
+    threeWH = 1;
+    fourWH = 1;
+    fiveWH = 1;
+    sixWH = 1;
+    sevenWH = 1;
+    oneEAttack = false;
+    twoEAttack = false;
+    threeEAttack = false;
+    fourEAttack = false;
+    fiveEAttack = false;
+    sixEAttack = false;
+    sevenEAttack = false;
+    rangerAttackCount = 1;
+    knightAttackCount = 1;
+    wizardAttackCount = wizardA;
+    paladinAttackCount = 1;
+    assassinAttackCount = 1;
+    knightAttacking = false;
+    wizardAttacking = false;
+    rangerAttacking = false;
+    paladinAttacking = false;
+    assassinAttacking = false;
+    randomNumber = 0;
+    knightDead = false;
+    wizardDead = false;
+    rangerDead = false;
+    paladinDead = false;
+    assassinDead = false;
     statsUpdate();
     clearInterval(mainTimer);
+    clearInterval(mainTimerTwo);
     
 };
 
@@ -324,15 +381,16 @@ function timer(){  // Timer Display
             clearInterval(mainTimer);
             secA = 25;
             $('.timer').css("visibility", "hidden");
+            $("#pickTimeBtn").css("display", "none");
             setTimeout(() => {
                 timeStartTwo();
             }, 1000);
-        };
-        
+        };      
 };
 
 function timeStartTwo(){
         $('.timerTwo').css("visibility", "visible");
+        $("#attackTimeBtn").css("display", "initial");
         mainTimerTwo = setInterval(timerTwo, 1000);
         // timeRunning = true;
 };
@@ -370,17 +428,20 @@ function timerTwo(){  // Timer Display
         clearInterval(mainTimerTwo);
         sec = 35;
         $('.timerTwo').css("visibility", "hidden");
+        $("#attackTimeBtn").css("display", "none");
         damageOne();
         damageTwo();
         damageThree();
         damageFour();
         damageFive();
         damageSix();
-        damageSeven();
-        softEnrage();
+        damageSeven(); 
         borderBlack();
         pickPhaseReset();
         setTimeout(() => {
+            // newNames();
+            // statsUpdate();
+           // console.log(newNameOne, newNameTwo, newNameThree, newNameFour, newNameFive, newNameSix, newNameSeven);
             timeStart();
             newWave();
         }, 1000);
@@ -1844,6 +1905,7 @@ function damageSeven(){
 
 function timeStart(){
         $('.timer').css("visibility", "visible");
+        $("#pickTimeBtn").css("display", "block");
         mainTimer = setInterval(timer, 1000)
         // timeRunning = true;
 };
@@ -1917,8 +1979,8 @@ function pickPhaseReset(){
 $("#start").click(function(){ //Start Button
     console.log("start button clicked");
     pickPhase = true;
-    sec = 35;
-    secA = 25;
+    sec = 60;
+    secA = 60;
     $("#start").css("display", "none");
     $(".space").css("display", "none");
     $("#firstRow").css("display", "block");
@@ -1939,6 +2001,8 @@ $("#start").click(function(){ //Start Button
     $('#badFive').css("visibility", "visible");
     $('#badSix').css("visibility", "visible");
     $('#badSeven').css("visibility", "visible");
+    $('.timerTwo').css("visibility", "hidden");
+    $('.timer').css("visibility", "hidden");
     timeStart();
     // timeStartTwo();
     startMenu = false;
@@ -2084,7 +2148,9 @@ $("#pickedLeft").click(function(){ // player picks what hero is on the left
         assassinAttacking = true;
         $("#pickedLeft").css("border", "3px solid red");
     };
-    
+    if(pickPhase === true && leftPick === true && rightPick === true && centerPick === true){
+        $("#pickTimeBtn").css("display", "initial");
+    }; 
 });
 
 
@@ -2193,7 +2259,9 @@ $("#pickedCenter").click(function(){ // player picks what hero is in the center
         assassinAttacking = true;
         $("#pickedCenter").css("border", "3px solid red");
     };
-    
+    if(pickPhase === true && leftPick === true && rightPick === true && centerPick === true){
+        $("#pickTimeBtn").css("display", "initial");
+    };
 });
 
 $("#pickedRight").click(function(){ // player picks what hero is on the right
@@ -2304,7 +2372,9 @@ $("#pickedRight").click(function(){ // player picks what hero is on the right
         assassinAttacking = true;
         $("#pickedRight").css("border", "3px solid red");
     };
-
+    if(pickPhase === true && leftPick === true && rightPick === true && centerPick === true){
+        $("#pickTimeBtn").css("display", "initial");
+    };
 });
 
 
@@ -2353,13 +2423,13 @@ function statsUpdate(){ // updates Visable Unit Stats for user
     $(".nextPaladinInfo").html('Paladin: '+paladinA+'/'+paladinH);
     $(".nextAssassinInfo").html('Assassin: '+assassinA+'/'+assassinH);
 
-    $(".oneEInfo").html( oneW+': '+oneEA+'/'+oneEH);
-    $(".twoEInfo").html(twoW+': '+twoEA+'/'+twoEH);
-    $(".threeEInfo").html(threeW+': '+threeEA+'/'+threeEH);
-    $(".fourEInfo").html(fourW+': '+fourEA+'/'+fourEH);
-    $(".fiveEInfo").html(fiveW+': '+fiveEA+'/'+fiveEH);
-    $(".sixEInfo").html(sixW+': '+sixEA+'/'+sixEH);
-    $(".sevenEInfo").html(sevenW+': '+sevenEA+'/'+sevenEH);
+    $(".oneEInfo").html( newNameOne+': '+oneEA+'/'+oneEH);
+    $(".twoEInfo").html(newNameTwo+': '+twoEA+'/'+twoEH);
+    $(".threeEInfo").html(newNameThree+': '+threeEA+'/'+threeEH);
+    $(".fourEInfo").html(newNameFour+': '+fourEA+'/'+fourEH);
+    $(".fiveEInfo").html(newNameFive+': '+fiveEA+'/'+fiveEH);
+    $(".sixEInfo").html(newNameSeven+': '+sixEA+'/'+sixEH);
+    $(".sevenEInfo").html(newNameSeven+': '+sevenEA+'/'+sevenEH);
 };
 
 
@@ -3075,7 +3145,7 @@ function upcomingWave(){
                     $(".oneWInfo").html('Lord: '+oneWA+'/'+oneWH);
                     $("#nextOne").css("background-image", "url(assets/images/lordpic.jpg)");
                     oneW = "lord";
-                } else if(oneWH > 9 || oneWA > 9){
+                    } else if(oneWH > 9 || oneWA > 9){
                     $(".oneWInfo").html('Reaper: '+oneWA+'/'+oneWH);
                     $("#nextOne").css("background-image", "url(assets/images/skelkingpic.jpg)");
                     oneW = "reaper";
@@ -3297,14 +3367,48 @@ function upcomingWave(){
     };
 };
 
-
-            
-            
-          
-            
-            
+function newNames(){
+    if (oneE === false && oneW === "lord"){newNameOne = oneW};
+    if (oneE === false && oneW === "reaper"){newNameOne = oneW};
+    if (oneE === false && oneW === "beserker"){newNameOne = oneW};
+    if (oneE === false && oneW === "hellhound"){newNameOne = oneW};
+    if (oneE === false && oneW === "zombie"){newNameOne = oneW};
+    if (twoE === false && twoW === "lord"){newNameTwo = twoW};
+    if (twoE === false && twoW === "reaper"){newNameTwo = twoW};
+    if (twoE === false && twoW === "beserker"){newNameTwo = twoW};
+    if (twoE === false && twoW === "hellhound"){newNameTwo = twoW};
+    if (twoE === false && twoW === "zombie"){newNameTwo = twoW};
+    if (threeE === false && threeW === "lord"){newNameThree = threeW};
+    if (threeE === false && threeW === "reaper"){newNameThree = threeW};
+    if (threeE === false && threeW === "beserker"){newNameThree = threeW};
+    if (threeE === false && threeW === "hellhound"){newNameThree = threeW};
+    if (threeE === false && threeW === "zombie"){newNameThree = threeW};
+    if (fourE === false && fourW === "lord"){newNameFour = fourW};
+    if (fourE === false && fourW === "reaper"){newNameFour = fourW};
+    if (fourE === false && fourW === "beserker"){newNameFour = fourW};
+    if (fourE === false && fourW === "hellhound"){newNameFour = fourW};
+    if (fourE === false && fourW === "zombie"){newNameFour = fourW};
+    if (fiveE === false && fiveW === "lord"){newNameFive = fiveW};
+    if (fiveE === false && fiveW === "reaper"){newNameFive = fiveW};
+    if (fiveE === false && fiveW === "beserker"){newNameFive = fiveW};
+    if (fiveE === false && fiveW === "hellhound"){newNameFive = fiveW};
+    if (fiveE === false && fiveW === "zombie"){newNameFive = fiveW};
+    if (sixE === false && sixW === "lord"){newNameSix = sixW};
+    if (sixE === false && sixW === "reaper"){newNameSix = sixW};
+    if (sixE === false && sixW === "beserker"){newNameSix = sixW};
+    if (sixE === false && sixW === "hellhound"){newNameSix = sixW};
+    if (sixE === false && sixW === "zombie"){newNameSix = sixW};
+    if (sevenE === false && sevenW === "lord"){newNameSeven = sevenW};
+    if (sevenE === false && sevenW === "reaper"){newNameSeven = sevenW};
+    if (sevenE === false && sevenW === "beserker"){newNameSeven = sevenW};
+    if (sevenE === false && sevenW === "hellhound"){newNameSeven = sevenW};
+    if (sevenE === false && sevenW === "zombie"){newNameSeven = sevenW};   
+};
 
 function newWave(){
+            softEnrage();
+            newNames();
+            console.log(newNameOne, newNameTwo, newNameThree, newNameFour, newNameFive, newNameSix, newNameSeven);
     if(oneE === false && twoE === false && threeE === false && fourE === false 
         && fiveE === false && sixE === false && sevenE === false){
             console.log('looks like you killed everything');
@@ -3315,7 +3419,8 @@ function newWave(){
             $("#nextFive").css("visibility", "hidden");
             $("#nextSix").css("visibility", "hidden");
             $("#nextSeven").css("visibility", "hidden");
-            turnCounter++;
+            turnCounter = turnCounter + 2;
+            waveCount++;
             waveWaiting = false;
             if(oneW === 'zombie'){
                 $("#badOne").css("background-image", "url(assets/images/zombiewar.jpg)");
