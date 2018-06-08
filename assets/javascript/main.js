@@ -18,7 +18,6 @@ let attackPhase = false;
 let mainTimerTwo;
 let secA = 25;
 
-
 let nextKnightPicked = false;
 let nextWizardPicked = false;
 let nextRangerPicked = false;
@@ -157,6 +156,8 @@ let rangerDead = false;
 let paladinDead = false;
 let assassinDead = false;
 
+let x = true;
+
 function borderBlack(){
     $("#pickedLeft").css("border", '3px solid black');
     $("#pickedCenter").css("border", '3px solid black');
@@ -213,7 +214,15 @@ function loseTime(){
     $('#badSeven').css("visibility", "hidden");
     $("#pickTimeBtn").css("display", "none");
     $(".timer").css("visibility", "hidden");
-    $("#spaceText").html('YOU CLEARED '+waveCount+' WAVES<br><br>Click Start To Play Again')
+    $("#badOne").css("background-image", "url(assets/images/zombiewar.jpg)");
+    $("#badTwo").css("background-image", "url(assets/images/zombiewar.jpg)");
+    $("#badThree").css("background-image", "url(assets/images/zombiewar.jpg)");
+    $("#badFour").css("background-image", "url(assets/images/zombiewar.jpg)");
+    $("#badFive").css("background-image", "url(assets/images/zombiewar.jpg)");
+    $("#badSix").css("background-image", "url(assets/images/zombiewar.jpg)");
+    $("#badSeven").css("background-image", "url(assets/images/zombiewar.jpg)");
+
+    $("#spaceText").html('YOU SURVIVED '+waveCount+' WAVES<br><br>Click Start To Play Again')
     startMenu = true;
 
     turnCounter = 2;
@@ -2008,6 +2017,16 @@ $("#start").click(function(){ //Start Button
     startMenu = false;
 });
 
+$("#infoBtn").click(function(){
+    if(x === false){
+    $("#infoBox").css("visibility", "visible");
+    x = true;
+    console.log(infoBox);
+    } else {
+    $("#infoBox").css("visibility", "hidden"); 
+    x = false;
+    }; 
+});
 
 
 $("#pickedLeft").click(function(){ // player picks what hero is on the left
@@ -2024,7 +2043,7 @@ $("#pickedLeft").click(function(){ // player picks what hero is on the left
     wizardAttackCount = wizardA;
     if(paladinActive === true){paladinA = paladinA + 1};
     if(assassinActive === true){assassinA = assassinA + 1};
-    if(rangerActive === true){rangerA = rangerA + 1};
+    if(rangerActive === true){rangerA = rangerA + 2};
     if(wizardActive === true){wizardH = wizardH + 1};
     if(paladinActive === true){paladinH = paladinH + 1};
     if(assassinActive === true){assassinH = assassinH + 1};
@@ -2322,7 +2341,7 @@ $("#pickedRight").click(function(){ // player picks what hero is on the right
     $("#pickedLeft").css("border", "3px solid black");
     $("#pickedCenter").css("border", "3px solid black");
     $("#pickedRight").css("border", "3px solid black");
-    assassinA = assassinA + Math.ceil(Math.random()*5);
+    assassinA = assassinA + Math.ceil(Math.random()*4);
     $(".pickRightInfo").html('Assassin: '+assassinA+'/'+assassinH);
     assassinRight = true;
     rightPick = true;

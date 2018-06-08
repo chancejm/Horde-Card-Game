@@ -32,6 +32,22 @@ body{
     text-align: center;
     color: white;
 }
+#infoBtn{
+    position: absolute;
+    bottom: 10%;
+    background: darkgrey;
+    border: 1px solid grey;
+    opacity: 1; 
+}
+#infoBox{
+    position: absolute;
+    width: 96%;
+    background: darkgrey;
+    border: 5px solid grey;
+    top: 13%;
+    height: 58%;
+    opacity: 1;
+}
 #pickTimeBtn{
     display: none;
     position: absolute;
